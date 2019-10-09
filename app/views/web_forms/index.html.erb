@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Web Forms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Image</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @web_forms.each do |web_form| %>
+      <tr>
+        <td><%= web_form.title %></td>
+        <td><%= web_form.description %></td>
+        <td><%= web_form.image %></td>
+        <td><%= link_to 'Show', web_form %></td>
+        <td><%= link_to 'Edit', edit_web_form_path(web_form) %></td>
+        <td><%= link_to 'Destroy', web_form, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Web Form', new_web_form_path %>
