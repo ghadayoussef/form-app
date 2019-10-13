@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_10_143101) do
+ActiveRecord::Schema.define(version: 2019_10_11_170243) do
+
+  create_table "user_forms", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "web_form_id"
+    t.string "username"
+    t.string "email"
+    t.string "title"
+    t.string "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_user_forms_on_user_id"
+    t.index ["web_form_id"], name: "index_user_forms_on_web_form_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username"
