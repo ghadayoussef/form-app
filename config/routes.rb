@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  #root 'web_forms#index'
+  root 'web_forms#index'
   #get  '/web_forms/:title',to: 'web_forms#show'
   resources :web_forms
   #get  '/web_forms',to: 'web_forms#index'
