@@ -64,11 +64,12 @@ class WebFormsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_web_form
-      @web_form = WebForm.find(params[:id])
+      @web_form = WebForm.friendly.find(params[:id])
+      #@web_form = WebForm.where(title: params[:title] )
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def web_form_params
-      params.require(:web_form).permit(:title, :description, :image)
+      params.require(:web_form).permit(:title, :description, :image, :slug)
     end
 end
