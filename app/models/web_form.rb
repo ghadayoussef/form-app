@@ -1,4 +1,7 @@
 class WebForm < ApplicationRecord
+    before_save do
+        self.options.gsub!(/[\[\]\*]/,"") if attribute_present?("options")
+    end
     extend FriendlyId
     friendly_id :title, use: :slugged
 

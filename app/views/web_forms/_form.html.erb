@@ -22,11 +22,28 @@
   </div>
 
   <div class="field">
+    <%=label_tag 'option_email', 'Email' %>
+    <%= check_box_tag 'web_form[options][]','Email',checked('Email'),id:'option_email'%>
+
+    <%=label_tag 'option_job_title', 'Job Title' %>
+    <%= check_box_tag 'web_form[options][]','Job Title',checked('Job Title'),id:'option_job_title'%>
+
+    <%=label_tag 'option_best_time_to_call', 'Best time to call'%>
+    <%= check_box_tag 'web_form[options][]','Best time to call',checked('Best time to call'),id:'option_best_time_to_call'%>
+
+    <%=label_tag 'option_property_type', 'Property type' %>
+    <%= check_box_tag 'web_form[options][]','Property type',checked('Property type'),id:'option_property_type'%>
+  </div>
+
+  <div class="field">
     <%= form.label :image %>
     <%= form.file_field :image %>
   </div>
 
-  <div class="actions">
+  
+
+  <div class="actions" >
+  
     <%= form.submit %>
   </div>
 <% end %>

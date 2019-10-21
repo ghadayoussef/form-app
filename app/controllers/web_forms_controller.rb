@@ -70,6 +70,6 @@ class WebFormsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def web_form_params
-      params.require(:web_form).permit(:title, :description, :image, :slug)
+      params.require(:web_form).permit(:title, :description, :image, :slug, options:[])
     end
 end
