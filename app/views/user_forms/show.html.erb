@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Headline:</strong>
+  <%= @user_form.title %>
+</p>
+
+<p>
+  <strong>Layouts:</strong>
+  <%= @user_form.description %>
+</p>
+<p>
+  <strong>Name:</strong>
+  <%= @user_form.username %>
+</p>
+<p>
+  <strong>Phone number</strong>
+  <%= @user_form.phone_number %>
+</p>
+<p>
+  <strong>Email</strong>
+  <%= @user_form.email %>
+</p>
+<p>
+  <strong>Property type</strong>
+  <%= @user_form.property_type %>
+</p>
+
+
+
+
+<%= link_to 'Edit', edit_user_form_path(@user_form) %> |
+<%= link_to 'Back', user_forms_path %>

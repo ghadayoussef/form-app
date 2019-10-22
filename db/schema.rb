@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_21_154542) do
+ActiveRecord::Schema.define(version: 2019_10_22_113407) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
@@ -32,6 +32,10 @@ ActiveRecord::Schema.define(version: 2019_10_21_154542) do
     t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "phone_number"
+    t.string "property_type"
+    t.string "job_title"
+    t.datetime "time_to_call"
     t.index ["user_id"], name: "index_user_forms_on_user_id"
     t.index ["web_form_id"], name: "index_user_forms_on_web_form_id"
   end
@@ -54,6 +58,11 @@ ActiveRecord::Schema.define(version: 2019_10_21_154542) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "slug"
+    t.string "username"
+    t.string "phone_number"
+    t.string "email"
+    t.string "property"
+    t.datetime "time_to_call"
     t.string "options"
   end
 
