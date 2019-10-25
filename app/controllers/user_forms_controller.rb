@@ -22,14 +22,25 @@ class UserFormsController < ApplicationController
     def create
       #puts("web form idddddd ",params[:web])
       #puts params:title)
-      puts "here are all the params",params.inspect
-      #@web_form = WebForm.find(id: params[:web_form_id])
-      @web_form = WebForm.find(1)
-      puts("here is the title ",@web_form.title)
-      @user_form = UserForm.new(user_form_params)
+      #puts "here are all the params",params.inspect
+      params.each do |key,value|
+        puts "henaaaa #{key} is #{value}"
+      end
+      puts "hena el title",params[:user_form][:title]
+      @web_form = WebForm.find_by(title: params[:user_form][:title])
+      #@web_form = WebForm.find(1)
+      puts("here is the description ",@web_form.description)
+      puts "here is the user from params",user_form_params[:username]
+      #@user_form = UserForm.new(user_form_params)
+      @user_form = UserForm.new
+      @user_form.username = user_form_params[:username]
+      @user_form.phone_number = user_form_params[:phone_number]
       @user_form.web_form_id = @web_form.id
       @user_form.title = @web_form.title
       @user_form.description = @web_form.description
+      puts "here is the id of the user form ",@user_form.web_form_id
+      puts "el username",@user_form.username
+      puts "user form ",@user_form
   
       respond_to do |format|
         if @user_form.save

@@ -1,5 +1,5 @@
 class UserForm < ApplicationRecord  
-    belongs_to :web_forms
+    belongs_to :web_form
     #validates :user_id, presence: true
     validates :web_form_id, presence: true
     validates :username, presence: true
